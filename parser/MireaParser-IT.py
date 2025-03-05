@@ -21,7 +21,7 @@ it_codes = [
 ]
 
 # Папка для загрузки файлов
-download_dir = r"C:\\Users\scr1ge\Desktop\\MIREAPARSER\\iluha_kojevnikow"
+download_dir = r"YOUR DOWNLOAD FOLDER"
 
 # Настройки Chrome
 chrome_options = Options()
