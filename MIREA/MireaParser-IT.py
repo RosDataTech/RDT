@@ -22,6 +22,8 @@ it_codes = [
 
 # Папка для загрузки файлов
 download_dir = r"YOUR DOWNLOAD FOLDER"
+relevant_year = '2024'
+
 
 # Настройки Chrome
 chrome_options = Options()
@@ -54,17 +56,20 @@ for row in rows:
         for code in it_codes:
             if code in line:
                 splitted_line = [i for i in line.split()]
-                if '.pdf' in splitted_line[-2]:
-                    link = row.find_element(By.XPATH, ".//a[contains(@href, '.pdf')]")
-                    file_url = link.get_attribute("href")
-                    if not file_url.startswith("http"):
-                        file_url = urljoin("https://www.mirea.ru", file_url)  
-                    download_func.download_file(file_url, download_dir)
-                    if download_func.wait_for_download_complete(download_dir):
-                        print(f"Файл {file_url} успешно загружен.")
-                    else:
-                        print(f"Не удалось загрузить файл {file_url}.")
-    except IndexError:
+                for layer in splitted_line:
+                    if '.pdf' in layer and relevant_year in layer:
+                        link = row.find_element(By.XPATH, f".//a[contains(@href, {relevant_year}.pdf)]")
+                        file_url = link.get_attribute("href")
+
+                        if not file_url.startswith("http"):
+                            file_url = urljoin("https://www.mirea.ru", file_url)  
+                        download_func.download_file(file_url, download_dir)
+                        
+                        if download_func.wait_for_download_complete(download_dir):
+                            print(f"Файл {file_url} успешно загружен.")
+                        else:
+                            print(f"Не удалось загрузить файл {file_url}.")
+    except IndexError: # заплатка(        
         pass
 
 driver.quit()
