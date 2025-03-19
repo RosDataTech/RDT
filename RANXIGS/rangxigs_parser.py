@@ -14,16 +14,13 @@ rows = driver.find_elements(By.XPATH, "//tr[@itemprop='eduOp']")
 for row in rows:
     edu_code = row.find_element(By.XPATH, ".//span[@itemprop='eduCode']").text.strip()
     if str(edu_code) in codes:
-        popup_content = driver.find_element(By.CLASS_NAME, "popupFileWindow__content")
-        links = popup_content.find_elements(By.TAG_NAME, "a")
-        for link in links:
-            href = link.get_attribute("href")
-            if href and "javascript:void(0);" not in href:
-                k += 1
-                print(str(edu_code), href)
+        popup_content = row.find_element(By.CLASS_NAME, "popupFileWindow__content")
+        link = popup_content.find_elements(By.TAG_NAME, "a")[-1]
+        k+=1
+        href = link.get_attribute("href")
+        print(edu_code,href)
 print(k)
 driver.quit()
-
 
 
 
