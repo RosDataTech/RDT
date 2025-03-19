@@ -63,4 +63,8 @@ for key, data in max_year_links.items():
                                     VALUES ('OMPGU','{key}','{data['url']}','.pdf')''')
     pdf_counter += 1
 
-print('pdf_counter =', pdf_counter) 
+print('pdf_counter =', pdf_counter)
+
+conn.commit()
+cur.close()  
+conn.close()
