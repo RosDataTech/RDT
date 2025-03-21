@@ -4,7 +4,7 @@ import psycopg2
 from urllib.parse import urljoin  
 from urllib.parse import urlparse
 
-url = urlparse('DB_url')
+url = urlparse('DB_URL')
 
 conn = psycopg2.connect(
     host=url.hostname,
@@ -58,11 +58,10 @@ for spec in eduOp:
                     max_year_links[key] = {'year': year, 'url': full_url}
 
 for key, data in max_year_links.items():
-    print(f"{key}: {data['url']} (Год набора: {data['year']})")
-    cur.execute(f'''INSERT INTO Pedagogy (university,code,url,type)
-                                    VALUES ('OMPGU','{key}','{data['url']}','.pdf')''')
+    print(f"{key[:8]} {data['url']}")
     pdf_counter += 1
-
+    cur.execute(f'''INSERT INTO Pedagogy (university,code,url,type)
+                                    VALUES ('OMPGU','{key[:8]}','{data['url']}','.pdf')''')
 print('pdf_counter =', pdf_counter)
 
 conn.commit()
