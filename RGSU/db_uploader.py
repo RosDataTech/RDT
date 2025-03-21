@@ -4,7 +4,7 @@ import psycopg2
 from urllib.parse import urljoin  
 from urllib.parse import urlparse
 
-url = urlparse('DB_url')
+url = urlparse('DB_URL')
 
 conn = psycopg2.connect(
     host=url.hostname,
@@ -45,13 +45,13 @@ for row in eduOp_rows:
                     found_link = link['href']
                     break
             
-            if found_link:
+            if found_link and 'netcat' not in found_link:
                 if not found_link.startswith('http'):
                     found_link = f"https://s.rgsu.net{found_link}"
-                
-                print(f"Код программы: {code}, Год: {year}, Ссылка: {found_link}")
-                cur.execute(f'''INSERT INTO Pedagogy (university,code,url,type)
+                    cur.execute(f'''INSERT INTO Pedagogy (university,code,url,type)
                                     VALUES ('RGSU','{code}','{found_link}','.pdf')''')
+                
+                print(f"{code},{found_link}")
                 pdf_counter += 1
                 break
 
