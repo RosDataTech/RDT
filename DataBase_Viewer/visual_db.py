@@ -87,7 +87,7 @@ class DatabaseViewer(QMainWindow):
         self.load_table_list()
 
     def load_table_list(self):
-        url = urlparse('postgresql://postgres:yZKEWJnGDIaiZK6V@meekly-enabled-brocket.data-1.use1.tembo.io:5432/postgres')
+        url = urlparse('db_url')
 
         conn = psycopg2.connect(
             host=url.hostname,
