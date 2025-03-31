@@ -5,7 +5,7 @@ import time
 import psycopg2
 from urllib.parse import urlparse
 
-url = urlparse('postgresql://postgres:yZKEWJnGDIaiZK6V@meekly-enabled-brocket.data-1.use1.tembo.io:5432/postgres')
+url = urlparse('db_url')
 
 conn = psycopg2.connect(
     host=url.hostname,
@@ -14,7 +14,7 @@ conn = psycopg2.connect(
     user=url.username,
     password=url.password
 )
-cur= conn.cursor()
+cur = conn.cursor()
 
 
 codes = ['21.03.03', '05.03.03',
