@@ -28,7 +28,7 @@ time.sleep(3)
 table = driver.find_element(By.XPATH, '//*[@id="js-main"]/div/div[1]/div[1]/div/div[1]/div')
 rows = table.find_elements(By.XPATH, ".//p")
 
-count = 1
+count = 0
 for row in rows:
     cells1 = row.find_elements(By.XPATH, ".//small")
     cells2 = row.find_elements(By.XPATH, ".//b")
