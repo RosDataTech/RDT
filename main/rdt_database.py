@@ -1,5 +1,7 @@
 import psycopg2
 from urllib.parse import urlparse
+import rdt_db_viewer as dv
+import sys
 
 def dataToDict(db_url) -> dict:
     spec_names = ['IT','Jurisprudence','Pedagogy','Geology','Medicine']
@@ -30,3 +32,9 @@ def dataToDict(db_url) -> dict:
 
     return data_dict
 
+    
+def view(db_url):
+    app = dv.QApplication(sys.argv)
+    window = dv.DatabaseViewer(db_url)  
+    window.show()
+    sys.exit(app.exec_())
