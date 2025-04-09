@@ -1,0 +1,18 @@
+#Документация для работы с файлом main.py (не использующиеся напрямую функции не описаны)
+
+## rdt_pdf as pdf
+### pdf.uni_index - словарь индексации университетов.
+### pdf.extract_text(pdf_url) - парсит весь текст по pdf url и возвращает его в строчном формате.
+### pdf.uni_cutter(pdf_url, uni_name) - возвращает обрезанный текст в строчном формате по pdf url, оставляя только результаты обучения.
+
+## rdt_database as db
+### db.dataToDict(db_url) - возвращает словарь вида {uni_name, uni_url}, выгруженный из базы данных по ее ссылке.
+### db.view(db_url) - открывает окно визуализации базы данных по ее ссылке, с возможностью выбрать таблицы.
+### rdt_db_viewer - дополнительный модуль с описанием работы класса QTapplication, использующийся для визуализации базы данных.
+
+## rdt_hhru as hh
+### hh.job_req_search(search_term, exp_level = 'noExperience') - возвращает требования по специальностям по запросу search_term с опытом exp_level, с помощью API hh.ru .
+
+## rdt_ml as ml
+### ml.Analyzer - объект, предназначенный для сравнения требований и образовательных программ.
+### obj.main_analyze(edu_texts, job_texts, metric = 'optimal') - возвращает метрику, указанную в аргументе metric при сравнении edu_texts и job_texts
