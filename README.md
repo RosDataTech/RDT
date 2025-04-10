@@ -9,12 +9,12 @@
 
 ## Технологии
 
-- **scikit-learn** 
+- **Scikit-learn** 
 - **PostgreSQL**
 - **PyQt5**
 - **Sentence-transformers**
 - **Genism**
-- **Numpy**
+- **NumPy**
 
 ## Структура проекта
 
