@@ -1,0 +1,1 @@
+pip install sentence-transformers scikit-learn gensim numpy time scipy re PyPDF2 io psycopg2 urllib PyQt5
