@@ -11,7 +11,7 @@ def main():
 
     job_text = hh.job_req_search(hh_search_term)
 
-    db_url = 'postgresql://postgres:yZKEWJnGDIaiZK6V@meekly-enabled-brocket.data-1.use1.tembo.io:5432/postgres'
+    db_url = ''
 
     uni_data = db.dataToDict(db_url)['IT']
 
