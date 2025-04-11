@@ -3,7 +3,7 @@ import rdt_pdf as pdf
 import rdt_database as db
 import rdt_ml as ml
 import numpy as np
-db_url = 'postgresql://postgres:yZKEWJnGDIaiZK6V@meekly-enabled-brocket.data-1.use1.tembo.io:5432/postgres'
+db_url = ''
 
 
 def main():
