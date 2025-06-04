@@ -5,8 +5,11 @@
 Этот проект представляет собой исследовательскую работу команды **RosDataTech**. 
 Цель — выявить, насколько велик разрыв между подготовкой образовательных учреждений и реальными требованиями работодателей.
 
-**Презентация:**
+**Промежуточная презентация:**
 https://www.canva.com/design/DAGkJNbipvk/W2uXVoVluLTo-MUXgTuw5g/edit?utm_content=DAGkJNbipvk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+**Финальная презентация:**
+https://www.canva.com/design/DAGpHO_eVME/M12W-SggqQVpBE1VEE0Jdw/edit?utm_content=DAGpHO_eVME&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 Работа выполнена студентами группы **ИНБО-22-24** РТУ МИРЭА.
 
